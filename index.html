@@ -1,9 +1,14 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Rashka.dev</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
-<style id="page-style">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Rashka.dev</title>
+  <meta name="description" content="Portfolio of Eng. Abdirashid Abdulkadir Ahmed, software developer and MCA student building full-stack web applications and AI automation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <style id="page-style">
 /* Design tokens: dark navy base, electric blue for actions, cyan for small highlights */
 :root {
   --bg: #080D18;
@@ -134,9 +139,6 @@ main { overflow-x: clip; }
 .resume-title { font-family: var(--display); font-weight: 700; font-size: 1.35rem; letter-spacing: -0.02em; line-height: 1.2; }
 .resume-meta { color: var(--fg-2); font-size: 0.9rem; overflow-wrap: anywhere; }
 .resume-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.dz { display: grid; gap: 10px; padding: 18px; border: 1.5px dashed var(--line-strong); border-radius: var(--radius-sm); transition: border-color .2s ease, background-color .2s ease; }
-.dz.dragging { border-color: var(--accent); background: var(--surface-2); }
-.dz p { font-size: 0.95rem; color: var(--fg-2); }
 .note { font-size: 0.88rem; color: var(--muted); }
 .msg { font-size: 0.9rem; min-height: 1.4em; }
 .msg.err { color: var(--danger); }
@@ -166,9 +168,6 @@ main { overflow-x: clip; }
 .portrait-frame { position: relative; isolation: isolate; justify-self: start; width: 100%; max-width: 320px; padding: 1px; border-radius: 20px; background: linear-gradient(150deg, rgba(22, 139, 255, 0.9), rgba(34, 211, 238, 0.35) 45%, rgba(148, 163, 184, 0.14) 82%); box-shadow: 0 30px 60px -34px rgba(0, 123, 255, 0.6); }
 .portrait-frame::before { content: ""; position: absolute; inset: -18px; z-index: -1; background: radial-gradient(closest-side, rgba(0, 123, 255, 0.22), transparent 72%); filter: blur(8px); pointer-events: none; }
 .portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; border-radius: 19px; background: var(--card); }
-.portrait-fallback { display: grid; align-content: center; justify-items: center; gap: 8px; aspect-ratio: 4 / 5; padding: 24px; border-radius: 19px; background: linear-gradient(160deg, var(--surface-2), var(--card)); color: var(--fg-2); text-align: center; }
-.portrait-fallback strong { font-family: var(--display); font-weight: 700; font-size: 3.2rem; letter-spacing: -0.04em; color: var(--accent); line-height: 1; }
-.portrait-fallback span { font-size: 0.9rem; }
 
 /* Skills: badges grouped by category */
 .skills { display: grid; border-top: 1px solid var(--line); }
@@ -236,26 +235,7 @@ main { overflow-x: clip; }
 .foot-social a:hover, .to-top:hover { color: var(--fg); }
 
 /* Owner tools */
-.edit-fab { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 45; min-height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(22, 139, 255, 0.5); background: rgba(17, 28, 48, 0.94); color: var(--fg); font-weight: 600; font-size: 0.9rem; cursor: pointer; box-shadow: var(--shadow); transition: border-color .2s ease, background-color .2s ease; }
-.edit-fab:hover { border-color: var(--accent); background: var(--surface-2); }
-.scrim { position: fixed; inset: 0; background: var(--scrim); z-index: 50; }
-.panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100%); z-index: 60; overflow-y: auto; background: var(--surface); border-left: 1px solid var(--line); padding: calc(24px + env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) 24px; display: grid; gap: 22px; align-content: start; }
-.panel h2 { font-family: var(--display); font-size: 1.3rem; letter-spacing: -0.02em; }
-.panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.links-form { display: grid; gap: 22px; }
-.file-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Resume viewer */
-.viewer { position: fixed; inset: 0; z-index: 70; display: flex; flex-direction: column; background: var(--bg); padding-top: env(safe-area-inset-top, 0px); }
-.viewer-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding: 12px max(20px, env(safe-area-inset-right, 0px)) 12px max(20px, env(safe-area-inset-left, 0px)); background: var(--surface); border-bottom: 1px solid var(--line); }
-.viewer-bar h2 { font-family: var(--display); font-size: 1.1rem; letter-spacing: -0.015em; }
-.viewer-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.viewer-note { flex-basis: 100%; }
-.viewer-note:empty { display: none; }
-.viewer-body { flex: 1; min-height: 0; overflow: auto; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 24px max(16px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: var(--bg-2); }
-.viewer-body canvas { display: block; max-width: 100%; height: auto; background: #fff; box-shadow: var(--shadow); border-radius: 2px; }
-.viewer-status { margin: auto; max-width: 42ch; text-align: center; color: var(--fg-2); }
 
 /* Responsive */
 @media (max-width: 960px) {
@@ -289,6 +269,8 @@ main { overflow-x: clip; }
   .project:hover, .btn:hover { transform: none !important; }
 }
 </style>
+</head>
+<body>
 <div id="app">
   <a class="skip" href="#main">Skip to content</a>
 
@@ -321,7 +303,13 @@ main { overflow-x: clip; }
         </div>
         <section class="resume" id="resumeCard" aria-label="Resume">
           <div class="sheet" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="resume-body" id="resumeBody"></div>
+          <div class="resume-body">
+            <p class="resume-title">Resume</p>
+            <p class="resume-meta">PDF file, opens in a new tab</p>
+            <div class="resume-actions">
+              <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">View resume</a>
+            </div>
+          </div>
         </section>
       </div>
     </section>
@@ -329,6 +317,9 @@ main { overflow-x: clip; }
     <section class="section" id="about" aria-labelledby="about-h">
       <div class="col">
         <div class="about-grid" id="aboutGrid">
+          <div class="portrait-frame">
+            <img class="portrait" src="images/profile.jpg" alt="Portrait of Eng. Abdirashid Abdulkadir Ahmed" width="480" height="600" loading="lazy" decoding="async">
+          </div>
           <div class="about-copy">
             <h2 id="about-h" class="about-name">Eng. Abdirashid Abdulkadir Ahmed</h2>
             <p class="about-role">Software developer, full-stack developer and AI agent developer.</p>
@@ -421,7 +412,7 @@ main { overflow-x: clip; }
         <div>
           <p class="prose">Message me on WhatsApp or email me about internships, collaborations or freelance work.</p>
           <dl class="contact-list" id="contactList"></dl>
-          <form class="msg-form" id="msgForm" novalidate="" hidden="">
+          <form class="msg-form" id="msgForm" novalidate hidden>
             <h3>Send a message</h3>
             <div class="field">
               <label for="mName">Your name</label>
@@ -434,8 +425,8 @@ main { overflow-x: clip; }
               <p class="err" id="mTextErr" role="alert"></p>
             </div>
             <div class="cta">
-              <a class="btn btn-primary" id="waSend" href="#" target="_blank" rel="noopener noreferrer" hidden="">Send on WhatsApp</a>
-              <a class="btn btn-secondary" id="mailSend" href="#" hidden="">Open email app</a>
+              <a class="btn btn-primary" id="waSend" href="#" target="_blank" rel="noopener noreferrer" hidden>Send on WhatsApp</a>
+              <a class="btn btn-secondary" id="mailSend" href="#" hidden>Open email app</a>
             </div>
             <p class="note">WhatsApp opens with your message ready, and you press Send there. If the email app does not open, copy the address above and write to me directly.</p>
           </form>
@@ -447,94 +438,18 @@ main { overflow-x: clip; }
 
   <footer class="site-footer gut">
     <div class="col foot">
-      <p>© <span id="year"></span> Rashka.dev</p>
-      <nav class="foot-social" id="footSocial" aria-label="Social links" hidden=""></nav>
+      <p>&copy; <span id="year"></span> Rashka.dev</p>
+      <nav class="foot-social" id="footSocial" aria-label="Social links" hidden></nav>
       <a href="#top" class="to-top">Back to top</a>
     </div>
   </footer>
 
-  <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle" hidden="">
-    <div class="viewer-bar">
-      <h2 id="viewerTitle">Resume</h2>
-      <div class="viewer-actions">
-        <button class="btn btn-secondary btn-small" id="viewerSave" type="button" hidden="">Save a copy</button>
-        <a class="btn btn-secondary btn-small" id="viewerOpen" href="#" target="_blank" rel="noopener noreferrer">Open in new tab</a>
-        <button class="btn btn-primary btn-small" id="viewerClose" type="button">Close</button>
-      </div>
-      <p class="msg info viewer-note" id="viewerNote" role="status" aria-live="polite"></p>
-    </div>
-    <div class="viewer-body" id="viewerBody" tabindex="0"></div>
-  </div>
-
-  <button class="edit-fab" id="editBtn" type="button" hidden="">Edit page</button>
-  <div class="scrim" id="scrim" hidden=""></div>
-  <aside class="panel" id="panel" aria-labelledby="panel-h" hidden="">
-    <div class="panel-head">
-      <h2 id="panel-h">Edit page</h2>
-      <button class="btn btn-secondary btn-small" id="panelClose" type="button">Close</button>
-    </div>
-    <p class="note">Only you see this panel. Changes go live for everyone who opens the page.</p>
-
-    <div class="field">
-      <span class="lbl">Resume (PDF)</span>
-      <div class="file-row">
-        <label class="btn btn-secondary btn-small" for="resumeFile">Choose PDF</label>
-        <input class="visually-hidden" id="resumeFile" type="file" accept="application/pdf,.pdf">
-        <span class="note" id="resumeName">No file uploaded</span>
-      </div>
-    </div>
-
-    <div class="field">
-      <span class="lbl">Profile photo</span>
-      <div class="file-row">
-        <label class="btn btn-secondary btn-small" for="photoFile">Choose image</label>
-        <input class="visually-hidden" id="photoFile" type="file" accept="image/jpeg,image/png,image/webp">
-        <span class="note" id="photoName">No photo yet</span>
-      </div>
-    </div>
-
-    <form id="linksForm" class="links-form" novalidate="">
-      <div class="field">
-        <label for="fEmail">Email address</label>
-        <input id="fEmail" type="email" autocomplete="email" placeholder="name@example.com">
-        <p class="err" id="fEmailErr" role="alert"></p>
-      </div>
-      <div class="field">
-        <label for="fWhatsapp">WhatsApp number</label>
-        <input id="fWhatsapp" type="text" inputmode="tel" autocomplete="tel" placeholder="+252 61 234 5678">
-        <p class="err" id="fWhatsappErr" role="alert"></p>
-      </div>
-      <div class="field">
-        <label for="fGithub">GitHub profile</label>
-        <input id="fGithub" type="url" placeholder="https://github.com/username">
-        <p class="err" id="fGithubErr" role="alert"></p>
-      </div>
-      <div class="field">
-        <label for="fLinkedin">LinkedIn profile</label>
-        <input id="fLinkedin" type="url" placeholder="https://www.linkedin.com/in/username">
-        <p class="err" id="fLinkedinErr" role="alert"></p>
-      </div>
-      <button class="btn btn-primary" id="saveLinks" type="submit">Save contact details</button>
-    </form>
-    <p class="msg info" id="panelMsg" role="status" aria-live="polite"></p>
-  </aside>
 </div>
-<script type="application/json" id="site-state">{"resume":{"id":"eba25633696524fc66d8acede8190994","name":"resume.pdf","size":29009,"at":"2026-10-23T05:05:58.400Z"},"photo":{"id":"d7aec987c95ca5171697b877c6937bb8"},"email":"abdirashidabduqadir912@gmail.com","whatsapp":"+252617536123","github":"","linkedin":""}</script>
+<script type="application/json" id="site-state">{"email":"abdirashidabduqadir912@gmail.com","whatsapp":"+252617536123","github":"","linkedin":""}</script>
 <script id="page-script">
 (function () {
   "use strict";
   var $ = function (s, r) { return (r || document).querySelector(s); };
-  var app = $("#app");
-  var PRISTINE = app.innerHTML; /* untouched markup, used to rebuild the page on save */
-  var HEAD = [
-    "<title>Rashka.dev</title>",
-    '<meta name="claude:viewport-fit-sides" content="cover">',
-    '<link rel="preconnect" href="https://fonts.googleapis.com">',
-    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">'
-  ].join("\n");
-  var RESET = ":root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}";
-
   var STATE = {};
   try { STATE = JSON.parse($("#site-state").textContent) || {}; } catch (e) { STATE = {}; }
 
@@ -547,6 +462,7 @@ main { overflow-x: clip; }
     ["Tools", [["Git", 1], ["GitHub", 1], ["VS Code", 1], ["Eclipse", 1], ["MS Office", 1]]],
     ["Spoken languages", [["English", 1], ["Somali", 1]]]
   ];
+
   var PROJECTS = [
     { name: "House Rental Management System", status: "done", label: "Completed",
       problem: "Landlords need one place to track properties, tenants and rent payments.",
@@ -562,7 +478,6 @@ main { overflow-x: clip; }
       stack: ["n8n", "AI agents", "Automation"] }
   ];
 
-  var ASSETS = null, ARTIFACT = null, DL = null, IS_EDITOR = false, BUSY = false;
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -570,13 +485,9 @@ main { overflow-x: clip; }
     if (text != null) n.textContent = text;
     return n;
   }
-  function blobUrl(id) { return "/_blob/" + id; }
-  function fmtSize(b) { return b >= 1048576 ? (b / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(b / 1024)) + " KB"; }
-  function fmtDate(iso) {
-    var d = new Date(iso);
-    return isNaN(d) ? "" : d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
-  }
+
   function setMsg(node, kind, text) { node.className = "msg " + kind; node.textContent = text || ""; }
+
 
   /* ---------- Static content ---------- */
   function renderStatic() {
@@ -623,105 +534,6 @@ main { overflow-x: clip; }
     });
   }
 
-  /* ---------- Resume card ---------- */
-  function renderResume() {
-    var box = $("#resumeBody");
-    box.textContent = "";
-    var r = STATE.resume;
-    if (r && r.id) {
-      box.appendChild(el("p", "resume-title", "Resume"));
-      var meta = "PDF, " + fmtSize(r.size || 0) + (r.at ? ", updated " + fmtDate(r.at) : "");
-      box.appendChild(el("p", "resume-meta", meta));
-      var actions = el("div", "resume-actions");
-      var view = el("a", "btn btn-primary", "View resume");
-      view.href = "#";
-      view.addEventListener("click", function (e) { e.preventDefault(); openResumeInTab(r, view); });
-      actions.appendChild(view);
-      if (DL) {
-        var save = el("button", "btn btn-secondary", "Save a copy");
-        save.type = "button";
-        save.addEventListener("click", function () { saveCopy(r, save); });
-        actions.appendChild(save);
-      }
-      box.appendChild(actions);
-      var m = el("p", "msg info"); m.id = "resumeMsg"; m.setAttribute("role", "status");
-      box.appendChild(m);
-      if (IS_EDITOR) {
-        var own = el("div", "resume-actions");
-        var rep = el("button", "btn btn-secondary btn-small", "Replace PDF"); rep.type = "button";
-        rep.addEventListener("click", function () { $("#resumeFile").click(); });
-        var rm = el("button", "btn btn-secondary btn-small", "Remove"); rm.type = "button";
-        rm.addEventListener("click", function () { confirmRemove(own, rm); });
-        own.appendChild(rep); own.appendChild(rm);
-        box.appendChild(own);
-      }
-    } else if (IS_EDITOR) {
-      var dz = el("div", "dz"); dz.id = "dropzone";
-      dz.appendChild(el("p", "resume-title", "Add your resume"));
-      dz.appendChild(el("p", null, "Drop a PDF here or choose a file. Visitors can then open it from this card."));
-      var pick = el("button", "btn btn-primary", "Choose PDF"); pick.type = "button";
-      pick.addEventListener("click", function () { $("#resumeFile").click(); });
-      dz.appendChild(pick);
-      dz.appendChild(el("p", "note", "PDF only, up to 20 MB."));
-      var m2 = el("p", "msg info"); m2.id = "resumeMsg"; m2.setAttribute("role", "status");
-      dz.appendChild(m2);
-      box.appendChild(dz);
-    } else {
-      box.appendChild(el("p", "resume-title", "Resume"));
-      box.appendChild(el("p", "resume-meta", "Available on request. Use the contact details below."));
-    }
-    $("#resumeName").textContent = r && r.id ? (r.name || "resume.pdf") + " (" + fmtSize(r.size || 0) + ")" : "No file uploaded";
-  }
-
-  function confirmRemove(wrap, btn) {
-    wrap.textContent = "";
-    var ask = el("span", "note", "Remove the resume from your page?");
-    var yes = el("button", "btn btn-primary btn-small", "Remove resume"); yes.type = "button";
-    var no = el("button", "btn btn-secondary btn-small", "Keep it"); no.type = "button";
-    yes.addEventListener("click", function () { commit({ resume: null }, "Removing resume..."); });
-    no.addEventListener("click", renderResume);
-    wrap.appendChild(ask); wrap.appendChild(yes); wrap.appendChild(no);
-    yes.focus();
-  }
-
-  function saveCopy(r, btn, msgNode) {
-    var msg = msgNode || $("#resumeMsg");
-    var name = (r.name || "resume.pdf"); if (!/\.pdf$/i.test(name)) name += ".pdf";
-    btn.disabled = true;
-    fetch(blobUrl(r.id)).then(function (res) {
-      if (!res.ok) throw new Error("fetch");
-      return res.blob();
-    }).then(function (b) {
-      return DL.save({ filename: name, data: b });
-    }).then(function () {
-      setMsg(msg, "ok", "Saved.");
-    }).catch(function (e) {
-      if (e && e.code === "declined") { setMsg(msg, "info", ""); }
-      else { setMsg(msg, "err", "Could not save a copy. Open the resume and download it from the PDF viewer instead."); }
-    }).then(function () { btn.disabled = false; });
-  }
-
-  /* ---------- About, contact ---------- */
-  function renderAbout() {
-    var grid = $("#aboutGrid");
-    var old = $("#portraitFrame");
-    if (old) old.remove();
-    var frame = el("div", "portrait-frame"); frame.id = "portraitFrame";
-    if (STATE.photo && STATE.photo.id) {
-      var img = el("img", "portrait");
-      img.alt = "Portrait of Eng. Abdirashid Abdulkadir Ahmed";
-      img.src = blobUrl(STATE.photo.id); img.width = 480; img.height = 600; img.loading = "lazy"; img.decoding = "async";
-      frame.appendChild(img);
-    } else {
-      var fb = el("div", "portrait-fallback");
-      fb.setAttribute("role", "img"); fb.setAttribute("aria-label", "Photo not added yet");
-      fb.appendChild(el("strong", null, "AA"));
-      fb.appendChild(el("span", null, "Photo coming soon"));
-      frame.appendChild(fb);
-    }
-    grid.insertBefore(frame, grid.firstChild);
-    $("#photoName").textContent = STATE.photo && STATE.photo.id ? "Photo added" : "No photo yet";
-  }
 
   function waDigits() { return (STATE.whatsapp || "").replace(/\D/g, ""); }
   function waPretty(n) {
@@ -774,14 +586,11 @@ main { overflow-x: clip; }
     if (STATE.linkedin) ext("LinkedIn", STATE.linkedin);
     var m = $("#contactMsg");
     if (!any) {
-      setMsg(m, "info", IS_EDITOR ? "No contact details yet. Use Edit page to add your WhatsApp, email and profiles." : "Contact details are being added.");
+      setMsg(m, "info", "Contact details are being added.");
     } else { setMsg(m, "info", ""); }
-    $("#fEmail").value = STATE.email || "";
-    $("#fWhatsapp").value = STATE.whatsapp || "";
-    $("#fGithub").value = STATE.github || "";
-    $("#fLinkedin").value = STATE.linkedin || "";
     updateMsgForm();
   }
+
 
   /* Message form: builds a WhatsApp link and a mailto link from what the visitor types. Nothing is sent from this page. */
   function msgParts() {
@@ -819,6 +628,7 @@ main { overflow-x: clip; }
     $("#msgForm").addEventListener("submit", function (e) { e.preventDefault(); });
   }
 
+
   /* ---------- Footer social links: only shown when a URL is set ---------- */
   function renderFooter() {
     var box = $("#footSocial"); if (!box) return;
@@ -831,233 +641,6 @@ main { overflow-x: clip; }
     box.hidden = box.childNodes.length === 0;
   }
 
-  /* ---------- Resume viewer: draws the PDF pages inside the page ---------- */
-  var PDFJS_BASE = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/";
-  var pdfLoad = null, viewerToken = 0, lastFocus = null;
-  function loadPdfJs() {
-    if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
-    if (!pdfLoad) {
-      pdfLoad = new Promise(function (resolve, reject) {
-        var sc = document.createElement("script");
-        sc.src = PDFJS_BASE + "pdf.min.js";
-        sc.onload = function () {
-          if (!window.pdfjsLib) { pdfLoad = null; return reject(new Error("pdfjs missing")); }
-          window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_BASE + "pdf.worker.min.js";
-          resolve(window.pdfjsLib);
-        };
-        sc.onerror = function () { pdfLoad = null; reject(new Error("pdfjs failed to load")); };
-        document.head.appendChild(sc);
-      });
-    }
-    return pdfLoad;
-  }
-  function renderPdfPage(pdf, n, body, token) {
-    if (token !== viewerToken) return Promise.resolve();
-    return pdf.getPage(n).then(function (page) {
-      var cssW = Math.min(Math.max(body.clientWidth - 48, 200), 880);
-      var base = page.getViewport({ scale: 1 });
-      var scale = cssW / base.width;
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      var vp = page.getViewport({ scale: scale * dpr });
-      var c = document.createElement("canvas");
-      c.width = Math.floor(vp.width); c.height = Math.floor(vp.height);
-      c.style.width = cssW + "px";
-      c.setAttribute("role", "img");
-      c.setAttribute("aria-label", "Resume, page " + n + " of " + pdf.numPages);
-      body.appendChild(c);
-      return page.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
-    });
-  }
-  function viewerStatus(body, text) {
-    body.textContent = "";
-    var p = el("p", "viewer-status", text); p.setAttribute("role", "status");
-    body.appendChild(p);
-  }
-  function openViewer(r) {
-    var v = $("#viewer"), body = $("#viewerBody"), token = ++viewerToken;
-    lastFocus = document.activeElement;
-    $("#viewerSave").hidden = !DL;
-    $("#viewerNote").textContent = "";
-    viewerStatus(body, "Loading resume...");
-    v.hidden = false; document.body.style.overflow = "hidden";
-    $("#viewerClose").focus();
-    Promise.all([
-      loadPdfJs(),
-      fetch(blobUrl(r.id)).then(function (res) { if (!res.ok) throw new Error("HTTP " + res.status); return res.arrayBuffer(); })
-    ]).then(function (a) {
-      return a[0].getDocument({ data: new Uint8Array(a[1]) }).promise;
-    }).then(function (pdf) {
-      if (token !== viewerToken) return;
-      body.textContent = "";
-      var chain = Promise.resolve();
-      for (var i = 1; i <= pdf.numPages; i++) (function (n) { chain = chain.then(function () { return renderPdfPage(pdf, n, body, token); }); })(i);
-      return chain;
-    }).catch(function () {
-      if (token !== viewerToken) return;
-      viewerStatus(body, "The resume could not be shown here. Use Open in new tab or Save a copy above.");
-    });
-  }
-  function closeViewer() {
-    viewerToken++;
-    $("#viewer").hidden = true; $("#viewerBody").textContent = "";
-    document.body.style.overflow = "";
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
-  }
-  function openResumeInTab(r, btn) {
-    var msg = $("#viewerNote");
-    var win = window.open("about:blank", "_blank");
-    if (!win) { setMsg(msg, "err", "Your browser blocked the new tab. Allow pop-ups for this page and try again."); return; }
-    btn.disabled = true;
-    fetch(blobUrl(r.id)).then(function (res) {
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      return res.blob();
-    }).then(function (b) {
-      var url = URL.createObjectURL(new Blob([b], { type: "application/pdf" }));
-      win.location.href = url;
-      setTimeout(function () { URL.revokeObjectURL(url); }, 120000);
-      setMsg(msg, "info", "");
-    }).catch(function () {
-      win.close();
-      setMsg(msg, "err", "The resume could not be opened. Try Save a copy instead.");
-    }).then(function () { btn.disabled = false; });
-  }
-  function initViewer() {
-    $("#viewerOpen").addEventListener("click", function (e) {
-      e.preventDefault();
-      if (STATE.resume && STATE.resume.id) openResumeInTab(STATE.resume, e.currentTarget);
-    });
-    $("#viewerClose").addEventListener("click", closeViewer);
-    $("#viewerSave").addEventListener("click", function (e) { if (STATE.resume) saveCopy(STATE.resume, e.currentTarget, $("#viewerNote")); });
-    document.addEventListener("keydown", function (e) {
-      var v = $("#viewer"); if (v.hidden) return;
-      if (e.key === "Escape") { e.preventDefault(); closeViewer(); return; }
-      if (e.key !== "Tab") return;
-      var f = Array.prototype.slice.call(v.querySelectorAll("button, a[href]")).filter(function (n) { return !n.hidden && !n.disabled && n.offsetParent !== null; });
-      if (!f.length) return;
-      var first = f[0], last = f[f.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    });
-  }
-
-  /* ---------- Saving: rebuild the page from state and publish ---------- */
-  function buildDoc(state) {
-    var json = JSON.stringify(state).replace(/</g, "\\u003c");
-    var css = $("#page-style").textContent;
-    var js = $("#page-script").textContent;
-    return "<!doctype html><html><head><meta charset=utf8><meta name=viewport content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><style>" + RESET + "</style></head><body>" +
-      HEAD + "\n<style id=\"page-style\">" + css + "</style>\n<div id=\"app\">" + PRISTINE + "</div>\n" +
-      "<script type=\"application/json\" id=\"site-state\">" + json + "</scr" + "ipt>\n" +
-      "<script id=\"page-script\">" + js + "</scr" + "ipt></body></html>";
-  }
-
-  function errText(e) {
-    var c = e && e.code;
-    if (c === "too_large") return "That file is too large. Use a PDF under 20 MB.";
-    if (c === "unsupported_type") return "That file type is not accepted.";
-    if (c === "quota_or_state") return "This page's storage is full. Remove an old file or use a smaller one.";
-    if (c === "rate_limited") return "Too many saves in a row. Wait a minute and try again.";
-    if (c === "not_writer" || c === "not_granted" || c === "capability_disabled") return "You don't have permission to edit this page here.";
-    if (c === "conflict") return "The page was updated somewhere else. It will reload with the latest version.";
-    return "Something went wrong while saving. Check your connection and try again.";
-  }
-  function currentMsg() { return $("#panel").hidden ? ($("#resumeMsg") || $("#contactMsg")) : $("#panelMsg"); }
-  function lock(on) {
-    BUSY = on;
-    ["resumeFile", "photoFile", "saveLinks"].forEach(function (id) { var n = document.getElementById(id); if (n) n.disabled = on; });
-  }
-  function commit(patch, busyText) {
-    var msg = currentMsg();
-    var next = Object.assign({}, STATE, patch);
-    lock(true); setMsg(msg, "info", busyText || "Saving...");
-    return ARTIFACT.publish(buildDoc(next)).then(function () {
-      STATE = next; /* open views reload to the new version; refresh this one in case it stays */
-      renderAbout(); renderResume(); renderContact(); renderFooter();
-      lock(false);
-      var done = currentMsg();
-      if (done) setMsg(done, "ok", "Saved. Your page is updated.");
-    }).catch(function (e) {
-      lock(false); setMsg(msg, "err", errText(e));
-    });
-  }
-
-  function readHead(file) {
-    return file.slice(0, 5).arrayBuffer().then(function (b) { return String.fromCharCode.apply(null, new Uint8Array(b)); });
-  }
-  function handleResume(file) {
-    if (!file || BUSY) return;
-    var msg = currentMsg();
-    if (!/\.pdf$/i.test(file.name) && file.type !== "application/pdf") return setMsg(msg, "err", "Choose a PDF file. Other formats are not accepted.");
-    if (file.size > 20 * 1048576) return setMsg(msg, "err", "That PDF is over 20 MB. Compress it and try again.");
-    if (file.size < 100) return setMsg(msg, "err", "That file looks empty. Choose your resume PDF.");
-    readHead(file).then(function (h) {
-      if (h !== "%PDF-") throw { code: "notpdf" };
-      lock(true); setMsg(msg, "info", "Uploading " + file.name + "...");
-      return ASSETS.upload(file, { type: "application/pdf" });
-    }).then(function (up) {
-      lock(false);
-      return commit({ resume: { id: up.id, name: file.name, size: up.sizeBytes, at: new Date().toISOString() } }, "Publishing resume...");
-    }).catch(function (e) {
-      lock(false);
-      setMsg(msg, "err", e && e.code === "notpdf" ? "That file isn't a valid PDF. Export your resume as a PDF and try again." : errText(e));
-    });
-  }
-  function handlePhoto(file) {
-    if (!file || BUSY) return;
-    var msg = currentMsg();
-    if (["image/jpeg", "image/png", "image/webp"].indexOf(file.type) < 0) return setMsg(msg, "err", "Choose a JPG, PNG or WebP image.");
-    if (file.size > 8 * 1048576) return setMsg(msg, "err", "That image is over 8 MB. Use a smaller photo.");
-    lock(true); setMsg(msg, "info", "Uploading photo...");
-    ASSETS.upload(file).then(function (up) {
-      lock(false);
-      return commit({ photo: { id: up.id } }, "Publishing photo...");
-    }).catch(function (e) { lock(false); setMsg(msg, "err", errText(e)); });
-  }
-
-  function normUrl(v, host, re) {
-    v = (v || "").trim();
-    if (!v) return { ok: true, value: "" };
-    if (!/^https?:\/\//i.test(v)) v = "https://" + v;
-    v = v.replace(/^http:\/\//i, "https://");
-    return re.test(v) ? { ok: true, value: v } : { ok: false };
-  }
-  function handleLinks(e) {
-    e.preventDefault();
-    if (BUSY) return;
-    var email = $("#fEmail").value.trim();
-    var waRaw = $("#fWhatsapp").value.trim();
-    var waOk = !waRaw || (/^\+?[0-9 ()-]{8,20}$/.test(waRaw) && waRaw.replace(/\D/g, "").length >= 8 && waRaw.replace(/\D/g, "").length <= 15);
-    var gh = normUrl($("#fGithub").value, "github.com", /^https:\/\/(www\.)?github\.com\/[\w.-]+(\/[\w.-]*)?\/?$/i);
-    var li = normUrl($("#fLinkedin").value, "linkedin.com", /^https:\/\/([a-z]{2,3}\.)?linkedin\.com\/(in|company)\/[\w%.-]+\/?$/i);
-    var bad = false;
-    function flag(id, text) { $(id).textContent = text; if (text) bad = true; }
-    flag("#fEmailErr", email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) ? "Enter a valid email address, like name@example.com." : "");
-    flag("#fWhatsappErr", waOk ? "" : "Enter the number with its country code, like +252 61 234 5678.");
-    flag("#fGithubErr", gh.ok ? "" : "Enter a GitHub profile link, like https://github.com/username.");
-    flag("#fLinkedinErr", li.ok ? "" : "Enter a LinkedIn profile link, like https://www.linkedin.com/in/username.");
-    if (bad) return;
-    commit({ email: email, whatsapp: waRaw ? "+" + waRaw.replace(/\D/g, "") : "", github: gh.value, linkedin: li.value }, "Saving contact details...");
-  }
-
-  /* ---------- Owner panel ---------- */
-  function openPanel() { $("#panel").hidden = false; $("#scrim").hidden = false; $("#fEmail").focus(); }
-  function closePanel() { $("#panel").hidden = true; $("#scrim").hidden = true; $("#editBtn").focus(); }
-  function enableEditor() {
-    IS_EDITOR = true;
-    $("#editBtn").hidden = false;
-    $("#editBtn").addEventListener("click", openPanel);
-    $("#panelClose").addEventListener("click", closePanel);
-    $("#scrim").addEventListener("click", closePanel);
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("#panel").hidden) closePanel(); });
-    $("#resumeFile").addEventListener("change", function (e) { handleResume(e.target.files[0]); e.target.value = ""; });
-    $("#photoFile").addEventListener("change", function (e) { handlePhoto(e.target.files[0]); e.target.value = ""; });
-    $("#linksForm").addEventListener("submit", handleLinks);
-    var card = $("#resumeCard");
-    ["dragenter", "dragover"].forEach(function (n) { card.addEventListener(n, function (e) { e.preventDefault(); var z = $("#dropzone"); if (z) z.classList.add("dragging"); }); });
-    ["dragleave", "drop"].forEach(function (n) { card.addEventListener(n, function (e) { e.preventDefault(); var z = $("#dropzone"); if (z) z.classList.remove("dragging"); }); });
-    card.addEventListener("drop", function (e) { if (e.dataTransfer && e.dataTransfer.files[0]) handleResume(e.dataTransfer.files[0]); });
-    renderResume(); renderContact();
-  }
 
   /* ---------- Navigation ---------- */
   function initNav() {
@@ -1083,16 +666,15 @@ main { overflow-x: clip; }
     ["about", "skills", "projects", "experience", "education", "contact"].forEach(function (id) { io.observe(document.getElementById(id)); });
   }
 
-  /* ---------- Start ---------- */
-  renderStatic(); renderAbout(); renderResume(); initMsgForm(); renderContact(); renderFooter(); initNav(); initViewer();
 
-  function use(name) {
-    try { return window.claude && window.claude.use ? window.claude.use(name).catch(function () { return null; }) : Promise.resolve(null); }
-    catch (e) { return Promise.resolve(null); }
-  }
-  Promise.all([use("assets"), use("artifact"), use("downloads")]).then(function (c) {
-    ASSETS = c[0]; ARTIFACT = c[1]; DL = c[2];
-    if (ASSETS && ARTIFACT) enableEditor(); else renderResume();
-  });
+  /* ---------- Start ---------- */
+  $("#year").textContent = new Date().getFullYear();
+  renderStatic();
+  renderContact();
+  initMsgForm();
+  renderFooter();
+  initNav();
 })();
-</script></body></html>
+</script>
+</body>
+</html>
